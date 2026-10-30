@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import ProjectList from '../../components/ProjectList.astro';
+import { pagesConfig } from '../../pages.config';
+import { getSortedProjects } from '../../utils/projects';
+
+const projects = await getSortedProjects();
+---
+
+<BaseLayout>
+  <SEO slot="head" title={pagesConfig.projects.title} description={pagesConfig.projects.description} type="website" />
+  <main class="page-container work-page">
+    <header class="page-header">
+      <h1 class="page-title">{pagesConfig.projects.heading}</h1>
+      <p class="page-intro">{pagesConfig.projects.intro}</p>
+    </header>
+    <ProjectList projects={projects} />
+  </main>
+  <style>
+    .work-page { max-width: 960px; }
+  </style>
+</BaseLayout>

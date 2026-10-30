@@ -1,0 +1,56 @@
+---
+title: "Speech AI that works on children's real-world audio"
+role: "Co-led the open-source Voice Type Classifier; co-supervised BabyHuBERT; designed training and evaluation data"
+period: "2019–2026"
+outcomeSummary: "Open-source models that tell who is speaking, and when, in day-long recordings worn by young children: state of the art across 40+ languages, approaching human-annotator agreement."
+tags: ["AI/ML", "Data & governance"]
+featured: true
+order: 1
+problem: "Researchers and NGOs now record children's everyday language environment with small wearable devices, producing thousands of hours of audio. Nobody can listen to it all, and speech models trained on clean adult speech break down on it: roughly 80% of a day-long recording is silence or noise, voices are far from the microphone, and families speak dozens of languages, many with little or no speech technology. The only widely used automatic tool was a closed, English-centred commercial system."
+constraints:
+  - "Recordings of children at home are highly sensitive: data cannot simply be pooled or published"
+  - "Human annotations are scarce and expensive, especially for under-represented languages"
+  - "Must work across very different languages, cultures and acoustic environments"
+  - "End users are researchers and field teams, mostly without machine-learning expertise"
+approach: "First, we built and released the Voice Type Classifier (VTC, 2020), an open-source model that labels speech as coming from the key child, other children, female adults or male adults. It outperformed the commercial alternative. Next, to move past the ceiling of supervised training on small annotated sets, I co-supervised BabyHuBERT: a self-supervised speech model pretrained on about 13,000 hours of child-centred recordings from 40+ languages, after voice-activity detection cut the share of non-speech from ~80% to ~8%. We fine-tuned it for voice type classification and evaluated it on six corpora, using child-disjoint train/validation/test splits so that no child's voice leaks from training into testing."
+impact:
+  metrics:
+    - label: "Voice type classification, average F1"
+      value: "65.1%, vs. 69.8% agreement between human annotators"
+    - label: "Pretraining data"
+      value: "~13,000 hours, 40+ languages"
+    - label: "Gains on under-represented languages"
+      value: "+14.0 and +18.3 F1 points over HuBERT (Vanuatu, Solomon Islands)"
+  qualitative: "BabyHuBERT consistently outperformed both an adult-speech model (HuBERT) and a model pretrained on English child recordings (W2V2-LL4300) on all six evaluation corpora (F1 55.0–76.1%). An independent follow-up found that BabyHuBERT is also the best starting point for recognising the speech sounds young children produce. Code and models are shared with the research community, under the governance described in a separate case study."
+keyDecisions:
+  - decision: "Pretrain on noisy, in-domain, multilingual audio instead of adapting a model built for clean adult speech"
+    reasoning: "Years of experiments showed that new architectures and tuning brought only marginal gains on this data. The bottleneck was the mismatch between training audio and real-world recordings."
+    alternatives:
+      - "Fine-tune an off-the-shelf adult-speech model (HuBERT, wav2vec 2.0)"
+      - "Reuse a model pretrained only on English child recordings"
+  - decision: "Split data by child, not by audio segment"
+    reasoning: "Random segment splits put the same child's voice in both training and test sets, which inflates scores and hides how the model behaves on new families."
+    alternatives:
+      - "Random segment-level splits (higher reported numbers, weaker generalisation)"
+  - decision: "Report results per corpus and per language, not just an average"
+    reasoning: "The largest gains, and the largest risks, are in under-represented languages. An average would have hidden both."
+learnings:
+  - "In messy real-world audio, choosing the right data mattered more than tweaking the architecture."
+  - "Averages hide who a model fails: evaluating per language and per population is part of building it fairly."
+  - "[Edit] For non-expert users, documentation, support and easy installation are as much a part of the product as accuracy."
+skills: ["Self-supervised speech models", "Speaker diarization", "Evaluation design", "Dataset curation", "Open-source release", "Supervising ML engineers"]
+evidence:
+  - label: "Voice Type Classifier (code)"
+    url: "https://github.com/LAAC-LSCP/VTC"
+    kind: "Code"
+  - label: "BabyHuBERT (model)"
+    url: "https://huggingface.co/MarvinLvn/BabyHuBERT"
+    kind: "Model"
+  - label: "Charlot et al. (2026): BabyHuBERT paper"
+    url: "https://arxiv.org/abs/2509.15001"
+    kind: "Paper"
+  - label: "Lavechin et al. (2026): phoneme recognition with BabyHuBERT"
+    url: "https://arxiv.org/abs/2603.05213"
+    kind: "Paper"
+relatedProjects: ["governance-sensitive-child-data", "diarization-benchmarks"]
+---

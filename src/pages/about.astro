@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import { siteConfig, socialLabels } from '../config';
+import { pagesConfig } from '../pages.config';
+
+const { author, social } = siteConfig;
+const links = Object.entries(social).filter(([, url]) => url);
+
+const path = [
+  { when: '2013–2026', what: 'Researcher → Research Director', where: 'CNRS & École Normale Supérieure, Paris' },
+  { when: '2014', what: 'Habilitation (accreditation to supervise research)', where: 'École Normale Supérieure, Paris' },
+  { when: '2011–2012', what: 'Postdoctoral Fellow', where: 'Max Planck Institute for Psycholinguistics, Nijmegen' },
+  { when: '2009', what: 'PhD in Linguistics', where: 'Purdue University, USA' },
+  { when: '2004', what: 'Teaching degree in Language & Literature', where: 'Universidad Nacional de Rosario, Argentina' },
+];
+---
+
+<BaseLayout>
+  <SEO slot="head" title={pagesConfig.about.title} description={pagesConfig.about.description} type="website" />
+  <main class="page-container about">
+    <header class="page-header">
+      <h1 class="page-title">About</h1>
+      <p class="page-intro">
+        I'm a senior research scientist working where AI/ML meets sensitive, real-world data. Over more than a decade
+        at CNRS I've taken work from niche idea to widely used tool: field-testing recording hardware on four continents,
+        supervising state-of-the-art open-source speech AI, building the datasets and annotation pipelines to train and
+        benchmark models, and working through the legal and ethical side of recording children at home.
+      </p>
+    </header>
+
+    <section>
+      <h2>What I bring</h2>
+      <ul class="bring">
+        <li><strong>Range across fields.</strong> I've worked across anthropology, linguistics, psychology, economics and speech technology, which lets me bring very different teams together on the same problem.</li>
+        <li><strong>Getting things built.</strong> I scope projects, decide what to build, buy or hire for, and see the work through to tools other people use.</li>
+        <li><strong>Responsible AI in practice.</strong> I've put data protection, licensing and ethics review into day-to-day operations, not just policy documents.</li>
+        <li><strong>Leading people.</strong> I've led teams of up to 12, hired for 20+ technical, administrative and research roles, and written onboarding and training for each.</li>
+        <li><strong>Clear communication.</strong> I explain complex results to ethics boards, policymakers, practitioners and community representatives.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Current focus</h2>
+      <p>
+        I'm moving from building tools for researchers to building AI and data products used by millions: products that
+        are safe, fair and useful for very diverse users, including children and under-served language communities.
+      </p>
+    </section>
+
+    <section>
+      <h2>Recognition</h2>
+      <ul class="plain">
+        <li>Fellow of the International Speech Communication Association (ISCA), 2025</li>
+        <li>Invited Researcher, J-PAL (Abdul Latif Jameel Poverty Action Lab)</li>
+        <li>European Research Council Consolidator Grant (€2M, five years)</li>
+        <li>Visiting fellow: Max Planck Institute, Comparative Cultural Psychology (2022); Aarhus University, Interacting Minds Center (2025, 2026)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Path</h2>
+      <ol class="timeline">
+        {path.map((p) => (
+          <li><span class="when">{p.when}</span><span class="what">{p.what}</span><span class="where">{p.where}</span></li>
+        ))}
+      </ol>
+      <p class="note">I have lived and worked in Argentina, the UK, the USA, the Netherlands and France. Native Spanish speaker; native-level English and French; conversational Italian.</p>
+    </section>
+
+    <section>
+      <h2>Beyond work</h2>
+      <p>
+        I've given 10% of my income to effective charities since 2020 (Giving What We Can pledge) and co-founded two
+        effective-giving organisations in France.
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p><a href={`mailto:${author.email}`} class="email">{author.email}</a></p>
+      <p class="links">
+        {links.map(([k, url]) => <a href={url} target="_blank" rel="noopener noreferrer">{socialLabels[k] ?? k} ↗</a>)}
+        {author.cv && <a href={author.cv}>CV (PDF)</a>}
+      </p>
+    </section>
+  </main>
+
+  <style>
+    .about section { margin-bottom: 2.75rem; }
+    .about h2 { font-size: 1.375rem; margin: 0 0 0.9rem; letter-spacing: -0.01em; }
+    .about p { color: var(--color-text-secondary); line-height: 1.7; }
+    .bring, .plain { padding-left: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; }
+    .bring li, .plain li { margin-bottom: 0.5rem; }
+    .bring strong { color: var(--color-text); }
+    .timeline { list-style: none; padding: 0; margin: 0; }
+    .timeline li { display: grid; grid-template-columns: 7rem 1fr; column-gap: 1rem; padding: 0.7rem 0; border-top: 1px solid var(--color-border); }
+    .when { grid-row: span 2; font-size: 0.875rem; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+    .what { font-weight: 600; }
+    .where { font-size: 0.9375rem; color: var(--color-text-secondary); }
+    .note { font-size: 0.9375rem; margin-top: 1rem; }
+    .email { font-size: 1.125rem; font-weight: 600; }
+    .links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  </style>
+</BaseLayout>

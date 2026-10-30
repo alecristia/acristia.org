@@ -1,0 +1,52 @@
+---
+title: "Making sensitive child audio usable, legally and ethically"
+role: "Led data-protection practice and model governance; co-authored a 28-country handbook"
+period: "[years]"
+outcomeSummary: "Turned legal and ethical uncertainty into working processes: a 28-country data-protection handbook, risk assessments, an ethics board, and a licensing approach for releasing a model trained on children's audio."
+tags: ["Data & governance", "AI/ML"]
+featured: true
+order: 2
+problem: "Our recordings capture young children and their families at home, including bystanders who never signed anything, in up to 40 countries. Each country has different rules, CNRS had no precedent for this kind of data, and releasing an AI model trained on it raised new questions: could it leak information about the families, and who should be allowed to use it? Research teams needed practical answers, not legal texts."
+constraints:
+  - "GDPR plus national legislation in every country where data was collected"
+  - "Community data sovereignty: some data came with requirements set by Aboriginal leadership"
+  - "European Research Council ethics review of novel AI methods"
+  - "Safeguards had to protect families without making the data useless for science"
+approach: "I worked with institutional Data Protection Officers to design data-management plans and Data Protection Impact Assessments for research with children and caregivers, then turned those requirements into operational workflows across the data lifecycle: collection, annotation, storage, analysis and reuse. I co-authored a handbook that reviews legislation in 28 countries and turns it into practical guidance for teams collecting this type of data. During the ERC ethics review, I acted as translator between ethics reviewers and technical staff and set up an ad hoc ethics board. For BabyHuBERT, I led the governance arrangements, including a licensing approach to manage and reduce the risks of sharing a model trained on child-centred data."
+impact:
+  metrics:
+    - label: "Legislation reviewed"
+      value: "28 countries, incl. 6 in continental Europe"
+    - label: "Programme scope"
+      value: "Recordings from families in 40 countries"
+  qualitative: "I pioneered these practices for sensitive child-centred audio research at CNRS. The handbook is public guidance for teams worldwide. I have advised ethics boards and international scientific archives on responsible reuse, for example adapting data-access rules to the requirements of Aboriginal leadership."
+keyDecisions:
+  - decision: "Release BabyHuBERT under a licence with conditions, rather than fully open or not at all"
+    reasoning: "Fully open weights would maximise reuse but give no recourse against misuse of a model trained on children's voices. Not releasing it would waste a public investment and slow down the field. A licence keeps the model useful while setting clear limits."
+    alternatives:
+      - "Fully open release"
+      - "Keep the model internal"
+      - "Share only through individual collaborations"
+  - decision: "Write country-by-country practical guidance instead of applying one global policy"
+    reasoning: "Applying the strictest regime everywhere blocks legitimate work, while leaving each team to work it out alone produces inconsistent and risky practice."
+    alternatives:
+      - "Apply GDPR-level rules everywhere"
+      - "Leave compliance to each local team"
+  - decision: "Let community requirements shape access, not just the law"
+    reasoning: "Legal compliance is the floor. Trust from the communities who share their data is what makes the work possible in the long run."
+learnings:
+  - "[Edit] Governance moves faster when you sit between the lawyers and the engineers and translate in both directions."
+  - "[Edit] Writing the risk assessment early changes technical design choices; it should not be paperwork done at the end."
+skills: ["GDPR & DPIAs", "AI model governance", "Licensing", "Research ethics", "Stakeholder management", "Policy writing"]
+evidence:
+  - label: "Data Protection Handbook for Long-Form Recording Research"
+    url: "https://osf.io/preprints/osf/dy4wt_v1"
+    kind: "Handbook"
+  - label: "BabyHuBERT governance and access"
+    url: "https://osf.io/n75rs/wiki?wiki=e4kps"
+    kind: "Policy"
+  - label: "Example country report: Denmark"
+    url: "https://doi.org/10.31219/osf.io/az2qj"
+    kind: "Report"
+relatedProjects: ["speech-ai-child-audio"]
+---

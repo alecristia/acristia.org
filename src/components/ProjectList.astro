@@ -1,0 +1,146 @@
+---
+/**
+ * Full project list with tag filters.
+ * Projects with a case study link to their page; short entries show their evidence links.
+ */
+import { hasPage, allTags, type Project } from '../utils/projects';
+
+interface Props {
+  projects: Project[];
+}
+const { projects } = Astro.props;
+const tags = allTags(projects);
+---
+
+<div class="project-list" data-project-list>
+  <div class="filters" role="group" aria-label="Filter projects by area">
+    <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+    {tags.map((t) => (
+      <button type="button" class="chip" data-filter={t} aria-pressed="false">{t}</button>
+    ))}
+  </div>
+
+  <ul class="rows">
+    {projects.map((p) => (
+      <li class="row" data-tags={p.data.tags.join('|')}>
+        <div class="row-main">
+          {hasPage(p) ? (
+            <a class="row-title" href={`/projects/${p.id}`}>
+              {p.data.title}
+              <span class="case-pill">Case study →</span>
+            </a>
+          ) : (
+            <span class="row-title">{p.data.title}</span>
+          )}
+          <p class="row-summary">{p.data.outcomeSummary}</p>
+          {!hasPage(p) && p.data.evidence.length > 0 && (
+            <p class="row-evidence">
+              {p.data.evidence.map((e) => (
+                <a href={e.url} target="_blank" rel="noopener noreferrer">{e.label} ↗</a>
+              ))}
+            </p>
+          )}
+        </div>
+        <div class="row-meta">
+          {p.data.tags.map((t) => <span class="tag">{t}</span>)}
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  function initProjectFilters() {
+    document.querySelectorAll<HTMLElement>('[data-project-list]').forEach((root) => {
+      const chips = root.querySelectorAll<HTMLButtonElement>('.chip');
+      const rows = root.querySelectorAll<HTMLElement>('.row');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const f = chip.dataset.filter!;
+          chips.forEach((c) => {
+            const on = c === chip;
+            c.classList.toggle('is-active', on);
+            c.setAttribute('aria-pressed', String(on));
+          });
+          rows.forEach((r) => {
+            const t = (r.dataset.tags || '').split('|');
+            r.hidden = !(f === 'all' || t.includes(f));
+          });
+        });
+      });
+    });
+  }
+  document.addEventListener('astro:page-load', initProjectFilters);
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .chip {
+    font: inherit;
+    font-size: 0.8125rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+  }
+  .chip:hover { border-color: var(--color-accent); color: var(--color-text); }
+  .chip.is-active {
+    background: var(--color-text);
+    border-color: var(--color-text);
+    color: var(--color-bg);
+  }
+  .rows { list-style: none; padding: 0; margin: 0; }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .row[hidden] { display: none; }
+  .row-title {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  a.row-title:hover { color: var(--color-accent); }
+  .case-pill {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
+  .row-summary {
+    margin: 0.35rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    max-width: 62ch;
+  }
+  .row-evidence { margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; }
+  .row-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; align-content: flex-start; max-width: 14rem; }
+  .tag {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr; gap: 0.6rem; }
+    .row-meta { justify-content: flex-start; max-width: none; }
+  }
+</style>
