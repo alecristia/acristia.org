@@ -32,6 +32,7 @@ const tags = allTags(projects);
           ) : (
             <span class="row-title">{p.data.title}</span>
           )}
+          <p class="row-period">{p.data.role} · {p.data.period}</p>
           <p class="row-summary">{p.data.outcomeSummary}</p>
           {!hasPage(p) && p.data.evidence.length > 0 && (
             <p class="row-evidence">
@@ -119,6 +120,11 @@ const tags = allTags(projects);
     font-weight: 500;
     color: var(--color-accent);
     white-space: nowrap;
+  }
+  .row-period {
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
   }
   .row-summary {
     margin: 0.35rem 0 0;

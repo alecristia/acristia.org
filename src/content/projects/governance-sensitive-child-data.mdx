@@ -1,7 +1,7 @@
 ---
 title: "Making sensitive child audio usable, legally and ethically"
 role: "Led data-protection practice and model governance; co-authored a 28-country handbook"
-period: "[years]"
+period: "2021–2024"
 outcomeSummary: "Turned legal and ethical uncertainty into working processes: a 28-country data-protection handbook, risk assessments, an ethics board, and a licensing approach for releasing a model trained on children's audio."
 tags: ["Data & governance", "AI/ML"]
 figure:
@@ -10,20 +10,20 @@ figure:
   caption: "The safeguard used at each step of working with children's recordings."
 featured: true
 order: 2
-problem: "Our recordings capture young children and their families at home, including bystanders who never signed anything, in up to 40 countries. Each country has different rules, CNRS had no precedent for this kind of data, and releasing an AI model trained on it raised new questions: could it leak information about the families, and who should be allowed to use it? Research teams needed practical answers, not legal texts."
+problem: "Our recordings capture young children and their families at home, including bystanders who never signed anything, in many countries. Each country has different rules, and most researchers don't have the legal support to read and interpret local legislation. In addition, using these data for AI modelling raised new questions: could releasing the model leak information about the families, and who should be allowed to use it? Research teams needed practical answers, not obscure legal advice."
 constraints:
-  - "GDPR plus national legislation in every country where data was collected"
+  - "GDPR plus national legislation in every country where data was, or could be, collected"
   - "Community data sovereignty: some data came with requirements set by Aboriginal leadership"
-  - "European Research Council ethics review of novel AI methods"
+  - "Multiple organisations had oversight but not the specific expertise (e.g., European Research Council ethics review, CNRS)"
   - "Safeguards had to protect families without making the data useless for science"
-approach: "I worked with institutional Data Protection Officers to design data-management plans and Data Protection Impact Assessments for research with children and caregivers, then turned those requirements into operational workflows across the data lifecycle: collection, annotation, storage, analysis and reuse. I co-authored a handbook that reviews legislation in 28 countries and turns it into practical guidance for teams collecting this type of data. During the ERC ethics review, I acted as translator between ethics reviewers and technical staff and set up an ad hoc ethics board. For BabyHuBERT, I led the governance arrangements, including a licensing approach to manage and reduce the risks of sharing a model trained on child-centred data."
+approach: "I worked with specialists across law and ethics to design data-management plans and Data Protection Impact Assessments for research with children and caregivers, then turned them into day-to-day workflows across the data lifecycle: collection, annotation, storage, analysis and reuse. To give teams practical answers rather than legal texts, I co-authored a country-by-country handbook of the relevant legislation. During the ERC ethics review, I translated between ethics reviewers and technical staff and set up an ad hoc ethics board. For BabyHuBERT, I designed the governance, including a licensing approach that limits how a model trained on children's audio can be used."
 impact:
   metrics:
     - label: "Legislation reviewed"
       value: "28 countries, incl. 6 in continental Europe"
     - label: "Programme scope"
-      value: "Recordings from families in 40 countries"
-  qualitative: "I pioneered these practices for sensitive child-centred audio research at CNRS. The handbook is public guidance for teams worldwide. I have advised ethics boards and international scientific archives on responsible reuse, for example adapting data-access rules to the requirements of Aboriginal leadership."
+      value: "Data from families in 25+ countries"
+  qualitative: "These were the first such practices for sensitive child-centred audio at CNRS, and the handbook is now public guidance for teams worldwide. I have since advised ethics boards and international scientific archives on responsible reuse of this kind of data."
 keyDecisions:
   - decision: "Release BabyHuBERT under a licence with conditions, rather than fully open or not at all"
     reasoning: "Fully open weights would maximise reuse but give no recourse against misuse of a model trained on children's voices. Not releasing it would waste a public investment and slow down the field. A licence keeps the model useful while setting clear limits."
@@ -39,8 +39,8 @@ keyDecisions:
   - decision: "Let community requirements shape access, not just the law"
     reasoning: "Legal compliance is the floor. Trust from the communities who share their data is what makes the work possible in the long run."
 learnings:
-  - "[Edit] Governance moves faster when you sit between the lawyers and the engineers and translate in both directions."
-  - "[Edit] Writing the risk assessment early changes technical design choices; it should not be paperwork done at the end."
+  - "Governance moves faster when you sit between the lawyers/ethicists and the engineers and translate in both directions."
+  - "Writing the risk assessment early changes technical design choices; it should not be paperwork done at the end."
 skills: ["GDPR & DPIAs", "AI model governance", "Licensing", "Research ethics", "Stakeholder management", "Policy writing"]
 evidence:
   - label: "Data Protection Handbook for Long-Form Recording Research"

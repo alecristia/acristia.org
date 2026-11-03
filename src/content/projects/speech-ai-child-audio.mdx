@@ -1,6 +1,6 @@
 ---
 title: "Speech AI that works on children's real-world audio"
-role: "Co-led the open-source Voice Type Classifier; co-supervised BabyHuBERT; designed training and evaluation data"
+role: "Built the multi-country data consortium and annotation pipeline behind the models; co-led VTC; co-supervised BabyHuBERT"
 period: "2019–2026"
 outcomeSummary: "Open-source models that tell who is speaking, and when, in day-long recordings worn by young children: state of the art across 40+ languages, approaching human-annotator agreement."
 tags: ["AI/ML", "Data & governance"]
@@ -41,7 +41,6 @@ keyDecisions:
 learnings:
   - "In messy real-world audio, choosing the right data mattered more than tweaking the architecture."
   - "Averages hide who a model fails: evaluating per language and per population is part of building it fairly."
-  - "[Edit] For non-expert users, documentation, support and easy installation are as much a part of the product as accuracy."
 skills: ["Self-supervised speech models", "Speaker diarization", "Evaluation design", "Dataset curation", "Open-source release", "Supervising ML engineers"]
 evidence:
   - label: "Voice Type Classifier (code)"
@@ -52,9 +51,6 @@ evidence:
     kind: "Model"
   - label: "Charlot et al. (2026): BabyHuBERT paper"
     url: "https://arxiv.org/abs/2509.15001"
-    kind: "Paper"
-  - label: "Lavechin et al. (2026): phoneme recognition with BabyHuBERT"
-    url: "https://arxiv.org/abs/2603.05213"
     kind: "Paper"
 relatedProjects: ["governance-sensitive-child-data", "diarization-benchmarks"]
 ---
