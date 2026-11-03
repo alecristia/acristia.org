@@ -25,7 +25,7 @@ export const siteConfig = {
     /** Path to a photo in /public, or '' to show initials */
     photo: '/photo.jpg',
     /** Path to a public CV PDF in /public, or '' to hide the button */
-    cv: '',
+    cv: '/cv-alejandrina-cristia.pdf',
   },
 
   /** Only non-empty links are displayed */
