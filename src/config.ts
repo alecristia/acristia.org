@@ -23,7 +23,7 @@ export const siteConfig = {
     email: 'alecristia@gmail.com',
     location: 'Paris, France',
     /** Path to a photo in /public, or '' to show initials */
-    photo: '',
+    photo: '/photo.jpg',
     /** Path to a public CV PDF in /public, or '' to hide the button */
     cv: '',
   },
