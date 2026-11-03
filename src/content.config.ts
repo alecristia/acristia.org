@@ -72,6 +72,13 @@ const projectsCollection = defineCollection({
       kind: z.string().optional(),
     })).default([]),
 
+    /** Optional picture shown under the header of a case study */
+    figure: z.object({
+      src: z.string(),
+      alt: z.string(),
+      caption: z.string().optional(),
+    }).optional(),
+
     featured: z.boolean().default(false),
     status: z.enum(['completed', 'ongoing', 'archived']).default('completed'),
     order: z.number().optional(),

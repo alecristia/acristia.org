@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect width="720" height="300" rx="12" fill="#ffffff"/>
+  <text x="32" y="40" font-size="17" font-weight="700" fill="#171717">Who is speaking? Average F1 on the standard test set</text>
+  <text x="32" y="62" font-size="13" fill="#525252">Higher is better. All models fine-tuned on the same voice type classification data.</text>
+  <!-- axis: x from 230 (0%) to 670 (80%) => 5.5 px per point -->
+  <g font-size="12" fill="#a3a3a3">
+    <line x1="230" y1="84" x2="230" y2="262" stroke="#e5e5e5"/><text x="230" y="282" text-anchor="middle">0</text>
+    <line x1="340" y1="84" x2="340" y2="262" stroke="#f0f0f0"/><text x="340" y="282" text-anchor="middle">20</text>
+    <line x1="450" y1="84" x2="450" y2="262" stroke="#f0f0f0"/><text x="450" y="282" text-anchor="middle">40</text>
+    <line x1="560" y1="84" x2="560" y2="262" stroke="#f0f0f0"/><text x="560" y="282" text-anchor="middle">60</text>
+    <line x1="670" y1="84" x2="670" y2="262" stroke="#f0f0f0"/><text x="670" y="282" text-anchor="middle">80%</text>
+  </g>
+  <g font-size="13">
+    <text x="218" y="108" text-anchor="end" fill="#171717">HuBERT</text>
+    <text x="218" y="123" text-anchor="end" fill="#a3a3a3" font-size="11">clean adult speech</text>
+    <rect x="230" y="94" width="278.9" height="28" rx="3" fill="#d4d4d4"/>
+    <text x="516" y="113" fill="#525252">50.7</text>
+
+    <text x="218" y="152" text-anchor="end" fill="#171717">W2V2-LL4300</text>
+    <text x="218" y="167" text-anchor="end" fill="#a3a3a3" font-size="11">English child recordings</text>
+    <rect x="230" y="138" width="321.2" height="28" rx="3" fill="#a3a3a3"/>
+    <text x="559" y="157" fill="#525252">58.4</text>
+
+    <text x="218" y="196" text-anchor="end" fill="#171717" font-weight="700">BabyHuBERT</text>
+    <text x="218" y="211" text-anchor="end" fill="#0f766e" font-size="11">13,000 h, 40+ languages</text>
+    <rect x="230" y="182" width="358.1" height="28" rx="3" fill="#0f766e"/>
+    <text x="596" y="201" fill="#0f766e" font-weight="700">65.1</text>
+
+    <text x="218" y="240" text-anchor="end" fill="#171717">Human annotators</text>
+    <text x="218" y="255" text-anchor="end" fill="#a3a3a3" font-size="11">agreement between two people</text>
+    <rect x="230" y="226" width="384" height="28" rx="3" fill="none" stroke="#525252" stroke-dasharray="5 4"/>
+    <text x="622" y="245" fill="#525252">69.8</text>
+  </g>
+</svg>

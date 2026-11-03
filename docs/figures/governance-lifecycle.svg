@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 316" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect width="860" height="316" rx="12" fill="#ffffff"/>
+  <text x="32" y="40" font-size="17" font-weight="700" fill="#171717">A safeguard at every step of the data lifecycle</text>
+  <text x="32" y="62" font-size="13" fill="#525252">Each stage of working with children's recordings has its own legal and ethical control.</text>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f766e"/></marker></defs>
+  <g font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <rect x="32" y="92" width="140" height="48" rx="8" fill="#0f766e"/><text x="102" y="121">Collection</text>
+    <rect x="198" y="92" width="140" height="48" rx="8" fill="#0f766e"/><text x="268" y="121">Annotation</text>
+    <rect x="364" y="92" width="140" height="48" rx="8" fill="#0f766e"/><text x="434" y="121">Storage</text>
+    <rect x="530" y="92" width="140" height="48" rx="8" fill="#0f766e"/><text x="600" y="121">Model training</text>
+    <rect x="696" y="92" width="140" height="48" rx="8" fill="#0f766e"/><text x="766" y="121">Release &amp; reuse</text>
+  </g>
+  <g stroke="#0f766e" stroke-width="2" marker-end="url(#a)">
+    <line x1="174" y1="116" x2="194" y2="116"/><line x1="340" y1="116" x2="360" y2="116"/>
+    <line x1="506" y1="116" x2="526" y2="116"/><line x1="672" y1="116" x2="692" y2="116"/>
+  </g>
+  <g stroke="#d4d4d4" stroke-dasharray="3 3">
+    <line x1="102" y1="142" x2="102" y2="164"/><line x1="268" y1="142" x2="268" y2="164"/>
+    <line x1="434" y1="142" x2="434" y2="164"/><line x1="600" y1="142" x2="600" y2="164"/><line x1="766" y1="142" x2="766" y2="164"/>
+  </g>
+  <g font-size="12.5" fill="#262626">
+    <rect x="32" y="166" width="140" height="120" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="44" y="190"><tspan x="44" font-weight="700">Legal review per</tspan><tspan x="44" dy="17" font-weight="700">country</tspan><tspan x="44" dy="22">Handbook covering</tspan><tspan x="44" dy="17">28 countries; impact</tspan><tspan x="44" dy="17">assessments (DPIAs)</tspan></text>
+    <rect x="198" y="166" width="140" height="120" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="210" y="190"><tspan x="210" font-weight="700">Trained annotators</tspan><tspan x="210" dy="22">Manuals and</tspan><tspan x="210" dy="17">onboarding on the</tspan><tspan x="210" dy="17">ethical and legal</tspan><tspan x="210" dy="17">rules</tspan></text>
+    <rect x="364" y="166" width="140" height="120" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="376" y="190"><tspan x="376" font-weight="700">Data-management</tspan><tspan x="376" dy="17" font-weight="700">plans</tspan><tspan x="376" dy="22">Who may hold and</tspan><tspan x="376" dy="17">access which data,</tspan><tspan x="376" dy="17">and for how long</tspan></text>
+    <rect x="530" y="166" width="140" height="120" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="542" y="190"><tspan x="542" font-weight="700">Ethics oversight</tspan><tspan x="542" dy="22">ERC ethics review</tspan><tspan x="542" dy="17">and an ad hoc</tspan><tspan x="542" dy="17">ethics board for</tspan><tspan x="542" dy="17">novel AI methods</tspan></text>
+    <rect x="696" y="166" width="140" height="120" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="708" y="190"><tspan x="708" font-weight="700">Licensed access</tspan><tspan x="708" dy="22">BabyHuBERT shared</tspan><tspan x="708" dy="17">under conditions;</tspan><tspan x="708" dy="17">access shaped by</tspan><tspan x="708" dy="17">community needs</tspan></text>
+  </g>
+</svg>
