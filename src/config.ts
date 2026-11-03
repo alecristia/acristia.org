@@ -5,7 +5,7 @@
  */
 
 export const siteConfig = {
-  url: 'https://alecristia.github.io',
+  url: 'https://acristia.org',
   language: 'en',
   title: 'Alejandrina Cristia',
   description:

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alecristia.github.io/sitemap-index.xml
+Sitemap: https://acristia.org/sitemap-index.xml
